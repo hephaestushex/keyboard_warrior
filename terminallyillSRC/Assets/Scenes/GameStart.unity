@@ -225,7 +225,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 793.7, y: 526.8}
+  m_SizeDelta: {x: 665, y: 526.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198200262
 MonoBehaviour:
@@ -255,9 +255,11 @@ MonoBehaviour:
     |\n |                                                                                     
     |\n |                             __________________                       |\n
     |                                                  \\ \\                              
-    | \n |                                                    \\ \\                            
+    | \n |  press enter ...                    \\ \\                            
     |\n[======================\\ \\===========]\n    |  hh-02ug                                  
-    [_]                      |\n[-----------------------------------------------"
+    [_]                      |\n[-----------------------------------------------------------]\n
+    |                                                             {}  [==]           
+    |\n |          [pwr]    [rst]                         {}  [==]            |\n[-----------------------------------------------------------]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd9bed6499df5d24abddc71a236d03fd, type: 2}
   m_sharedMaterial: {fileID: -4917897952861689640, guid: cd9bed6499df5d24abddc71a236d03fd, type: 2}
