@@ -7,6 +7,7 @@ public class SwordScript : MonoBehaviour
 {
     public GameObject projectile;
     private bool canFire;
+    public int bulletCount = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +18,11 @@ public class SwordScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && canFire)
+        if (Input.GetMouseButton(0) && canFire && bulletCount > 0)
         {
                 StartCoroutine(WaitForFire());
             canFire = false;
+            bulletCount--;
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawnerScript : MonoBehaviour
 {
     public float spawnInterval = 5f;
+
     public GameObject enemy;
     // Start is called before the first frame update
     void Start()

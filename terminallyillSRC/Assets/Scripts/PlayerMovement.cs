@@ -9,7 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveInput;
-
+    
+    public int health = 100;
+    public int spawnersDestroyed = 0;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -59,5 +62,41 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+    }
+
+    private bool canBeHurt = true;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health -= 5;
+        }
+
+        else if (collision.gameObject.CompareTag("FinalDoor") && spawnersDestroyed >= 4)
+        { 
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Key"))
+        {
+            spawnersDestroyed++;
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        canBeHurt = false;
+    }
+
+    IEnumerator getHurt()
+    {
+        if (canBeHurt) { health -= 1; }
+        yield return new WaitForSeconds(1);
+        canBeHurt = true;
     }
 }
