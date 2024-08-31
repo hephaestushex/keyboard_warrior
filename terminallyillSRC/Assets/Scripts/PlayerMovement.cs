@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveInput.Normalize();
 
-        rb.velocity = moveInput * moveSpeed;
+        
 
         if (moveInput.x < 0)
         {
@@ -62,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = moveInput * moveSpeed;
     }
 
     private bool canBeHurt = true;
