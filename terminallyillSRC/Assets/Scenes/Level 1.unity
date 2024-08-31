@@ -132,8 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 10870237}
   - component: {fileID: 10870238}
+  - component: {fileID: 10870239}
   m_Layer: 0
-  m_Name: Sword
+  m_Name: Process Terminator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,6 +207,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &10870239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10870236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b7cc8385f9ca74f8ca43e05a3018e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 4538451247829516122, guid: 27a637068f41b984f8dd2996e39b4744, type: 3}
 --- !u!1 &83767160
 GameObject:
   m_ObjectHideFlags: 0
