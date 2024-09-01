@@ -15,5 +15,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) { SceneManager.LoadScene(1); }
+        if (Input.GetKeyDown(KeyCode.Q))
+        { Application.Quit(); UnityEditor.EditorApplication.isPlaying = false; }
     }
 }

@@ -14993,7 +14993,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'WASD - Controls
 
-    Q to Quit
+    L to Quit
 
     Left Click to Attack
 
@@ -19380,6 +19380,7 @@ MonoBehaviour:
   spawnersDestroyed: 0
   healthText: {fileID: 368358043}
   keysText: {fileID: 684403244}
+  deathText: {fileID: 2126493752}
 --- !u!212 &2130339614
 SpriteRenderer:
   m_ObjectHideFlags: 0

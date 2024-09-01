@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI keysText;
+    [SerializeField] GameObject deathText;
  
     // Start is called before the first frame update
     void Start()
@@ -69,13 +70,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (health < 0)
         {
-            
+            deathText.SetActive(true);
             StartCoroutine(die());
             
         }
 
         healthText.text = "Health: " + health;
         keysText.text = "Keys out of 4: " + spawnersDestroyed;
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {Application.Quit(); UnityEditor.EditorApplication.isPlaying = false; }
 
     }
 
