@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         keysText.text = "Keys out of 4: " + spawnersDestroyed;
 
         if (Input.GetKeyDown(KeyCode.L))
-        {Application.Quit(); UnityEditor.EditorApplication.isPlaying = false; }
+        {Application.Quit();}
 
         nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         levelText.text = "Level " + (nextSceneIndex - 1);
