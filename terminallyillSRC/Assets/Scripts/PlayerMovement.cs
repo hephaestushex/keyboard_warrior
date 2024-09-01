@@ -14,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
     
     public int health = 100;
     public int spawnersDestroyed = 0;
+    private int nextSceneIndex;
 
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI keysText;
+    [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] GameObject deathText;
  
     // Start is called before the first frame update
@@ -81,6 +83,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {Application.Quit(); UnityEditor.EditorApplication.isPlaying = false; }
 
+        nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        levelText.text = "Level " + (nextSceneIndex - 1);
+
     }
 
     IEnumerator die()
@@ -114,6 +119,14 @@ public class PlayerMovement : MonoBehaviour
         {
             spawnersDestroyed++;
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
         }
     }
 
