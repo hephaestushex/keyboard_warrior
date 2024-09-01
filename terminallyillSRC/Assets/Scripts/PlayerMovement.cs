@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     
     public int health = 100;
     public int spawnersDestroyed = 0;
+
+    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI keysText;
  
     // Start is called before the first frame update
     void Start()
@@ -62,6 +67,21 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        if (health < 0)
+        {
+            
+            StartCoroutine(die());
+            
+        }
+
+        healthText.text = "Health: " + health;
+        keysText.text = "Keys out of 4: " + spawnersDestroyed;
+
+    }
+
+    IEnumerator die()
+    { yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(0);
     }
 
     private void FixedUpdate()

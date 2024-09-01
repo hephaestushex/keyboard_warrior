@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SwordScript : MonoBehaviour
 {
     public GameObject projectile;
     private bool canFire;
     public int bulletCount = 100;
+
+    [SerializeField] TextMeshProUGUI bulletText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,8 @@ public class SwordScript : MonoBehaviour
             canFire = false;
             bulletCount--;
         }
+
+        bulletText.text = "Attacks remaining: " + bulletCount;
     }
 
     private void Fire()
